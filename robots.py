@@ -12,11 +12,15 @@ class Robot:
         return "A robot should never..."
 
     # constructor
-    def __init__(self, name = 'Marvin'):
-        self.__name = name
+    def __init__(self, name = None):
+        if str(name) == name:
+            self.__name = name
+        else:
+            self.__name = 'Marvin'
 
     name_counter = 0
 
+    # name getter
     @property
     def name(self):
         self.name_counter += 1
@@ -29,14 +33,12 @@ class Robot:
         # else:
         #     self.name = 'Marvin'
 
-x = Robot('Suzy')
-print(x.name_counter)
-print(x.name)
-print(x.name_counter)
+x = Robot(17)
+x.hi()
 x.name = 'Hildy'
 x.hi()
-print(x.name_counter)
-
+x.name = 17
+x.hi()
 
 
 
